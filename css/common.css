@@ -115,12 +115,13 @@ img {
   top: 5rem;
   left: 0;
   width: 100%;
+  margin-top: 50px;
   /* display: none; */
 }
 .submenu li a {
   display: block;
   background: #fff;
-  padding: 6px 0;
+  padding: 12px 0;
   text-align: center;
   color: var(--submenu);
   font-weight: 500;
