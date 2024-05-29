@@ -1,12 +1,44 @@
-// DOM 구조가 파악되면 실행
 $(function () {
-  // 대상을 변수에 저장
+  // GNB menu
   const $window = $(window);
   const $menu = $('.gnb > li');
   const $submenu = $('.submenu');
-  const duration = 300;
   const $header = $('#header');
 
+  // 전체 메뉴: 모바일, 타블렛
+  const $mSubmenu = $('.m-submenu-wrap');
+  const $dim = $('.dim');
+  const $btnClose = $('.btn-close');
+  const $btnMenu = $('.btn-menu');
+  const duration = 300;
+
+  const $mGnbMenu = $('.m-gnb > li');
+  const $mGnbSubmenu = $('.m-gnb-sub');
+
+  // 모바일 메뉴
+  // 모바일 용 메뉴를 클릭했을 때
+  $mGnbMenu.on('click', function () {
+    $(this).toggleClass('on');
+    $(this).siblings().removeClass('on');
+    $(this).find($mGnbSubmenu).stop().slideToggle(duration);
+    $(this).siblings().find($mGnbSubmenu).stop().slideUp(duration);
+  });
+
+  $btnMenu.on('click', function () {
+    $mSubmenu.addClass('active');
+    $dim.fadeIn(duration);
+  });
+
+  $btnClose.on('click', function () {
+    $mSubmenu.removeClass('active');
+    $dim.fadeOut(duration);
+  });
+
+  // 모바일 용 서브메뉴 초기화
+  $mGnbMenu.removeClass('on');
+  $mGnbSubmenu.stop().slideUp(duration);
+
+  // ---------------------------------- //
   // 메뉴 영역에 마우스가 들어오면
   $menu.on('mouseenter', function () {
     $submenu.stop().show();
@@ -21,16 +53,5 @@ $(function () {
     $submenu.stop().hide();
     $menu.removeClass('on');
     $header.removeClass('active');
-  });
-
-  // 마우스 휠을 조작할 때
-  $window.on('wheel', function (e) {
-    if (e.originalEvent.wheelDelta > 0) {
-      // 휠을 올렸을 때
-      $header.removeClass('hide');
-    } else {
-      // 휠을 내렸을 때
-      $header.addClass('hide');
-    }
   });
 });
