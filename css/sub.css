@@ -1,5 +1,5 @@
 @charset 'utf-8';
-
+/* e: 기본 1920 px */
 /* s: 서브 비주얼 */
 .company-intro .sub-visual {
   height: 50.4rem;
@@ -108,5 +108,152 @@
 .company-intro .sub-menu ul li:nth-child(1) {
   color: var(--main1);
 }
-
 /* //e: 서브 메뉴 */
+
+/* s: section1 : company-introduction */
+.company-introduction {
+  margin: 17rem 0;
+}
+.title-text {
+  text-align: center;
+}
+.title-text h2 {
+  font-weight: 700;
+  font-size: 5.8rem;
+  color: #000;
+}
+.title-text p {
+  margin-top: 3rem;
+  font-weight: 500;
+  font-size: 3.3rem;
+}
+
+.kumho-introduction {
+  position: relative;
+  margin-top: 7.3rem;
+  display: flex;
+  justify-content: center;
+  height: 51rem;
+  width: 100%;
+  background: url(../img/kumho-introduction.png) no-repeat;
+}
+/* dim */
+.kumho-introduction::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.kumho-introduction li {
+  z-index: 10;
+  width: 33.2rem;
+  height: 51rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.kumho-introduction li dl dt {
+  font-weight: 700;
+  font-size: 10rem;
+  color: var(--white);
+}
+.kumho-introduction li dl dd {
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: var(--white);
+}
+/* e: section1 */
+
+/* s: section2 : kumhoec*/
+.kumhoec {
+  margin-bottom: 17rem;
+}
+.kumhoec-con {
+  margin-top: 7.5rem;
+  display: flex;
+  gap: 8.4rem;
+  align-items: center;
+}
+.kumhoec-pic {
+  width: 71rem;
+  height: 88.7rem;
+}
+.kumhoec-text {
+  width: 61.8rem;
+  height: 71.6rem;
+}
+.kumhoec-text h3 {
+  font-weight: 600;
+  font-size: 3.4rem;
+  line-height: 1.4;
+  color: var(--main1);
+  margin-bottom: 6rem;
+}
+.kumhoec-text p {
+  margin-top: 2rem;
+  font-size: 2rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+/* e: section2 */
+
+/* s: section3 : vision */
+.vision {
+  margin-bottom: 17rem;
+}
+.vision figure {
+  margin: 7.5rem auto 0;
+  width: 92.2rem;
+  height: 47.3rem;
+}
+/* e: section3 */
+
+/* s: section4 : company-info */
+.company-info {
+  margin-bottom: 17rem;
+}
+.company-info-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 7.5rem;
+}
+.company-info-pic {
+  width: 71rem;
+  height: 57.2rem;
+  /* object-fit: cover; */
+}
+.company-info-pic figure {
+  width: 100%;
+  height: 100%;
+}
+.company-info-pic figure img {
+  width: 100%;
+  height: 100%;
+}
+.company-info-text tbody {
+  border-bottom: 2px solid #dddddd;
+}
+.company-info-text tbody tr {
+  border-top: 2px solid #dddddd;
+}
+.company-info-text tbody tr th {
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: var(--black);
+  padding: 2.8rem 4rem 2.8rem 0;
+  text-align: left;
+}
+.company-info-text tbody tr td {
+  font-weight: 500;
+  font-size: 1.9rem;
+  padding: 2.8rem 4rem;
+}
+/* e: section4 */
+/* e: 기본 1920 px */
+
+/* s: 태블릿 1024 px */
