@@ -274,9 +274,10 @@ img {
 }
 .m-subtitle {
   display: flex;
-  justify-content: space-between;
-  margin: 3rem 4rem 0 31.5rem;
+  justify-content: center;
+  margin: 3rem 4rem;
   align-items: center;
+  position: relative;
 }
 .m-sublogo a {
   display: block;
@@ -286,6 +287,8 @@ img {
   background-size: contain;
 }
 .btn-close {
+  position: absolute;
+  right: 0px;
   width: 2.6rem;
   height: 2.2rem;
   background: url(../img/ico-menu_b.svg) no-repeat 50% / contain;
@@ -721,6 +724,31 @@ img {
   }
 
   .util a.btn-search {
+    display: none;
+  }
+
+  /* 모바일 전체 메뉴2 */
+  .m-submenu-wrap {
+    width: 100%;
+  }
+  .m-sublogo a {
+    width: 10.6rem;
+    height: 3.5rem;
+  }
+  .btn-close {
+    width: 2.2rem;
+    height: 2rem;
+  }
+  .m-gnb > li > strong {
+    font-size: 2rem;
+    padding: 1.6rem 3.8rem;
+  }
+  .m-gnb-sub > li {
+    font-size: 1.6rem;
+    padding: 1.6rem 3.8rem;
+    flex: 1 1 100%;
+  }
+  .m-gnb > li > strong::after {
     display: none;
   }
   /* //e: header */
