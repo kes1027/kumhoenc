@@ -1,19 +1,22 @@
 @charset 'utf-8';
 
 /* s: visual */
-.visual-slide {
-  background: #000;
+.visual-slider-wrap {
   position: relative;
   width: 100%;
   /* height: 94rem; */
   /* 940/1920*100=48.95833333333333vw */
   height: 48.9583vw;
 }
-.visual-slide figure {
+.visual-slider-wrap .visual-slider {
   width: 100%;
   height: 100%;
 }
-.visual-slide img {
+.visual-slider-wrap figure {
+  width: 100%;
+  height: 100%;
+}
+.visual-slider-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -29,6 +32,22 @@
   bottom: 0;
   background: linear-gradient(-180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.25) 100%);
 }
+
+.visual {
+  position: relative;
+}
+.visual .visual_dim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/visual_shadow.png) no-repeat 50%;
+  z-index: 8;
+  pointer-events: none;
+  user-select: none;
+}
+
 .visual-title {
   height: 28.4rem;
   position: absolute;
@@ -36,7 +55,7 @@
   /* 190/1920=9.895833333333333 */
   left: 9.8958%;
   transform: translateY(-50%);
-  /* background: #ff0; */
+  z-index: 9;
 }
 .visual-title h2 {
   font-weight: 800;
@@ -52,17 +71,44 @@
   line-height: 1.4;
 }
 
-.visual-slider {
+.visual-slider-wrap {
   position: relative;
 }
-.visual-slider button {
+
+/*진행률 표시 */
+.progress {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1608px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 100;
+}
+.progress .progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--white);
+}
+/* 진행률 표시 */
+
+.visual .btn_pause {
   position: absolute;
   top: 75%;
   left: 90%;
   transform: translate(-50%, -50%);
-  width: 5.5rem;
-  height: 5.5rem;
-  background: url(../img/btn_stop.svg) no-repeat 0 0 / cover;
+  background: url(../img/btn_stop.svg) no-repeat 50%;
+  width: 55px;
+  height: 55px;
+  z-index: 20;
+}
+
+.visual .btn_pause.on {
+  background: url(../img/btn_play.svg) no-repeat 50%;
 }
 /* //e: visual */
 

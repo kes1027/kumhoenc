@@ -54,4 +54,47 @@ $(function () {
     $menu.removeClass('on');
     $header.removeClass('active');
   });
+
+  // ---------------------------------- //
+
+  // 슬라이더
+  // s: 3. 초기화 실행
+  const projectSlider = new Swiper('.visual-slider', {
+    loop: true,
+    slidesPerView: 'auto',
+    // spaceBetween: 40,
+
+    autoplay: {
+      delay: 3000,
+    },
+    speed: 1000, //슬라이드 되는 속도 : 기본값 300ms (0.3초)
+    effect: 'slide', // 기본값(slide), fade, cube, coverflow, flip, card 등
+
+    // 진행률 표시
+    on: {
+      autoplayTimeLeft(swiper, timeLeft, percentage) {
+        const percentageValue = (1 - percentage) * 100 + '%';
+        document.querySelector('.progress-bar').style.width = percentageValue;
+      },
+    },
+    // 진행률 표시
+  });
+
+  // 멈춤 버튼
+  var sw = 0;
+  $('.btn_pause').click(function () {
+    if (sw == 0) {
+      $('.btn_pause').addClass('on');
+      projectSlider.autoplay.stop();
+      sw = 1;
+    } else {
+      $('.btn_pause').removeClass('on');
+      projectSlider.autoplay.start();
+      sw = 0;
+    }
+    console.log(sw);
+  });
+  // 멈춤 버튼
+
+  // end:jquery
 });
