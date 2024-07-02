@@ -522,7 +522,24 @@ img {
 }
 
 /* family site */
-.family-site strong {
+.family-site {
+  position: relative;
+}
+
+.family-site::after {
+  content: '';
+  display: block;
+  width: 1.834rem;
+  height: 0.963rem;
+  background: url(../img/familysite-arrow.svg) no-repeat 50%;
+
+  position: absolute;
+  top: 50%;
+  right: 3.4rem;
+  transform: translateY(-50%);
+}
+
+.family-site select {
   cursor: pointer;
   display: flex;
   width: 100%;
@@ -534,29 +551,13 @@ img {
   font-weight: 700;
   line-height: 1.6;
   padding: 1rem 3rem;
-}
-.family-site strong::after {
-  content: '';
-  display: block;
-  width: 1.834rem;
-  height: 0.963rem;
-  background: url(../img/familysite-arrow.svg) no-repeat 50%;
+  background: transparent;
+  color: #fff;
+  appearance: none;
+  /* flex: 1 1 auto; */
 }
 
-.family-site {
-  position: relative;
-}
-.family-site ul {
-  position: absolute;
-  top: -900%;
-  left: 0%;
-  width: 100%;
-
-  /* display none */
-  display: none;
-}
-
-.family-site ul li {
+.family-site select option {
   cursor: pointer;
   border: 0.2rem solid rgba(255, 255, 255, 0.2);
   font-size: 1.8rem;
@@ -710,6 +711,12 @@ img {
 }
 
 /* s: 모바일 디자인 */
+@media (max-width: 530px) {
+  .util .btn-search {
+    display: none;
+  }
+}
+
 @media (max-width: 390px) {
   /* s: header */
   #header .inner {
@@ -721,10 +728,6 @@ img {
   .logo a {
     width: 10.3rem;
     height: 3.5rem;
-  }
-
-  .util a.btn-search {
-    display: none;
   }
 
   /* 모바일 전체 메뉴2 */

@@ -18,6 +18,9 @@
 
     <!-- script -->
     <script src="./js/jquery-3.7.0.min.js"></script>
+    <!-- gsap, scrolltrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
@@ -241,14 +244,15 @@
           </div>
         </div>
 
-        <!-- .progress>.progress-bar -->
-        <div class="progress">
-          <div class="progress-bar"></div>
+        <div class="progress-pause">
+          <!-- .progress>.progress-bar -->
+          <div class="progress">
+            <div class="progress-bar"></div>
+          </div>
+          <!-- 버튼 멈추기 -->
+          <button class="btn_pause"></button>
+          <!-- 버튼 멈추기 -->
         </div>
-
-        <!-- 버튼 멈추기 -->
-        <button class="btn_pause"></button>
-        <!-- 버튼 멈추기 -->
       </section>
       <!-- //e: visual -->
 
@@ -339,24 +343,61 @@
 
       <!-- s: 프로젝트 소개 -->
       <section class="project">
-        <div class="project-slider">
-          <!-- <div class="project-btn">
-          <button><i class="hidden">left</i></button>
-          <button><i class="hidden">right</i></button>
-        </div> -->
+        <div class="project-slider-wrap">
+          <div class="swiper project-slider">
+            <div class="swiper-wrapper">
+              <!-- s: 슬라이드 되는 아이템 1 -->
+              <div class="swiper-slide">
+                <div>
+                  <div class="project-btn">
+                    <button class="project-button-prev"><i class="hidden">left</i></button>
+                    <button class="project-button-next"><i class="hidden">right</i></button>
+                  </div>
+                  <span>01</span>
+                  <strong>프로젝트 소개</strong>
+                  <h4>화성동탄2A54BL</h4>
+                  <p>경기도 화성시 동탄신리천로5가길 51(신동)<br />경기도 화성시 신동 99-5</p>
+                  <a href="#" class="btn-cta">자세히보기</a>
+                </div>
+                <figure><img src="./img/project-intro1.png" alt="화성동탄2A54BL" /></figure>
+              </div>
+              <!-- //e: 슬라이드 되는 아이템 1 -->
 
-          <!-- s: 슬라이드 되는 아이템 하나 -->
-          <div class="project-item">
-            <div>
-              <span>01</span>
-              <strong>프로젝트 소개</strong>
-              <h4>화성동탄2A54BL</h4>
-              <p>경기도 화성시 동탄신리천로5가길 51(신동)<br />경기도 화성시 신동 99-5</p>
-              <a href="#" class="btn-cta">자세히보기</a>
+              <!-- s: 슬라이드 되는 아이템 2 -->
+              <div class="swiper-slide">
+                <div>
+                  <div class="project-btn">
+                    <button class="project-button-prev"><i class="hidden">left</i></button>
+                    <button class="project-button-next"><i class="hidden">right</i></button>
+                  </div>
+                  <span>02</span>
+                  <strong>프로젝트 소개</strong>
+                  <h4>무안공항</h4>
+                  <p>전라남도 무안군 망운면 피서리<br />공항로 970-260</p>
+                  <a href="#" class="btn-cta">자세히보기</a>
+                </div>
+                <figure><img src="./img/project-intro2.png" alt="화성동탄2A54BL" /></figure>
+              </div>
+              <!-- //e: 슬라이드 되는 아이템 2 -->
+
+              <!-- s: 슬라이드 되는 아이템 3 -->
+              <div class="swiper-slide">
+                <div>
+                  <div class="project-btn">
+                    <button class="project-button-prev"><i class="hidden">left</i></button>
+                    <button class="project-button-next"><i class="hidden">right</i></button>
+                  </div>
+                  <span>03</span>
+                  <strong>프로젝트 소개</strong>
+                  <h4>한남 TheHill</h4>
+                  <p>서울시 용산구 한남동</p>
+                  <a href="#" class="btn-cta">자세히보기</a>
+                </div>
+                <figure><img src="./img/project-intro3.png" alt="화성동탄2A54BL" /></figure>
+              </div>
+              <!-- //e: 슬라이드 되는 아이템 3 -->
             </div>
-            <figure><img src="./img/project-intro1.png" alt="화성동탄2A54BL" /></figure>
           </div>
-          <!-- //e: 슬라이드 되는 아이템 하나 -->
         </div>
       </section>
       <!-- //e: 프로젝트 소개 -->
@@ -428,17 +469,47 @@
 
       <!-- s: 홍보센터 -->
       <section class="news">
+        <span></span>
         <div class="inner">
           <div class="news-title">
             <h3>금호건설<br />홍보센터</h3>
             <p>금호건설의 새로운 소식을<br />전해드립니다.</p>
             <a href="#" class="btn-cta">VIEW MORE</a>
           </div>
-
           <div class="news-con">
             <ul class="news-list">
               <li>
                 <ul class="news-group1">
+                  <li>
+                    <a href="#">
+                      <div class="news-conlist">
+                        <strong>연합뉴스</strong>
+                        <h4>금호건설, 조경 특화 브랜드 '아트시스' 출시</h4>
+                        <time datetime="2024-06-13">24.06.13</time>
+                      </div>
+                      <figure><img src="./img/news-pic5.jpg" alt="news5" /></figure>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="news-conlist">
+                        <strong>뉴시스</strong>
+                        <h4>금호건설, 유튜브서 '아테라' 삼행시 댓글 경품 이벤트</h4>
+                        <time datetime="2024-06-05">24.06.05</time>
+                      </div>
+                      <figure><img src="./img/news-pic6.jpg" alt="news6" /></figure>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="news-conlist">
+                        <strong>조선비즈</strong>
+                        <h4>금호건설, 새 주거 브랜드 ‘아테라’ 공식 홈페이지 1일 공개</h4>
+                        <time datetime="2024-05-30">24.05.30</time>
+                      </div>
+                      <figure><img src="./img/news-pic7.png" alt="news7" /></figure>
+                    </a>
+                  </li>
                   <li>
                     <a href="#">
                       <div class="news-conlist">
@@ -464,6 +535,26 @@
 
               <li>
                 <ul class="news-group2">
+                  <li>
+                    <a href="#">
+                      <div class="news-conlist">
+                        <strong>이코노미스트</strong>
+                        <h4>금호건설 “하반기 ‘아테라’ 4500가구 공급…지난해 2배”</h4>
+                        <time datetime="2024-05-27">24.05.27</time>
+                      </div>
+                      <figure><img src="./img/news-pic8.jpg" alt="news8" /></figure>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="news-conlist">
+                        <strong>아시아투데이</strong>
+                        <h4>금호건설, ‘아테라’ 관련 소비자 행사 내달 연다</h4>
+                        <time datetime="2024-05-20">24.05.20</time>
+                      </div>
+                      <figure><img src="./img/news-pic9.jpg" alt="news9" /></figure>
+                    </a>
+                  </li>
                   <li>
                     <a href="#">
                       <div class="news-conlist">
@@ -603,18 +694,18 @@
                 <!-- 24.05.31 부터 어울림 홈페이지 이관: https://www.artera.co.kr -->
               </ul>
               <div class="family-site">
-                <strong>Family site</strong>
-                <ul>
-                  <li title="금호고속"><a href="https://www.kumhobuslines.co.kr/fr/main/main">금호고속</a></li>
-                  <li title="금호터미널"><a href="https://www.usquare.co.kr/kor/index.do">금호터미널</a></li>
-                  <li title="금호문화재단"><a href="http://www.kumhoarts.com/">금호문화재단</a></li>
-                  <li title="아시아나항공"><a href="https://flyasiana.com/">아시아나항공</a></li>
-                  <li title="아시아나IDT"><a href="https://www.asianaidt.com/kor/">아시아나IDT</a></li>
-                  <li title="에어부산"><a href="https://m.airbusan.com/mc/common/home">에어부산</a></li>
-                  <li title="아시아나에어포트"><a href="http://www.asianaairport.com/kr/">아시아나에어포트</a></li>
-                  <li title="아시아나세이버"><a href="https://www.asianasabre.co.kr/">아시아나세이버</a></li>
-                  <li title="에어서울"><a href="https://flyairseoul.com/CW/ko/main.do">에어서울</a></li>
-                </ul>
+                <select>
+                  <option value="#">Family site</option>
+                  <option value="https://www.kumhobuslines.co.kr/fr/main/main">금호고속</option>
+                  <option value="https://www.usquare.co.kr/kor/index.do">금호터미널</option>
+                  <option value="http://www.kumhoarts.com/">금호문화재단</option>
+                  <option value="https://flyasiana.com/">아시아나항공</option>
+                  <option value="https://www.asianaidt.com/kor/">아시아나IDT</option>
+                  <option value="https://m.airbusan.com/mc/common/home">에어부산</option>
+                  <option value="http://www.asianaairport.com/kr/">아시아나에어포트</option>
+                  <option value="https://www.asianasabre.co.kr/">아시아나세이버</option>
+                  <option value="https://flyairseoul.com/CW/ko/main.do">에어서울</option>
+                </select>
               </div>
             </div>
           </div>
