@@ -656,10 +656,21 @@ img {
   }
   /* //e: footer */
 }
+
+@media (max-width: 1150px) {
+  .inner {
+    /* w710 */
+    width: 70%;
+  }
+}
 /* //e: 태블릿 디자인 */
 
 /* 분기점:840 */
 @media (max-width: 840px) {
+  .inner {
+    /* w710 */
+    width: 70%;
+  }
   #footer {
     height: 101.7rem;
   }
@@ -712,6 +723,9 @@ img {
 
 /* s: 모바일 디자인 */
 @media (max-width: 530px) {
+  .inner {
+    width: 89.7435%;
+  }
   .util .btn-search {
     display: none;
   }
@@ -719,11 +733,6 @@ img {
 
 @media (max-width: 390px) {
   /* s: header */
-  #header .inner {
-    /* width: 35rem; */
-    /* 350/390*100=89.74358974358974% */
-    width: 89.7436%;
-  }
 
   .logo a {
     width: 10.3rem;

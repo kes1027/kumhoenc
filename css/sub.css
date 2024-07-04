@@ -1,5 +1,7 @@
 @charset 'utf-8';
 /* e: 기본 1920 px */
+
+/* s: 공통 */
 /* s: 서브 비주얼 */
 .company-intro .sub-visual {
   height: 50.4rem;
@@ -67,6 +69,11 @@
 /* //e: 서브 비주얼 */
 
 /* s: 서브 메뉴 */
+.sub-menu {
+  /* border: 1px solid #000; */
+  width: 100%;
+  overflow-x: auto;
+}
 .company-intro .sub-menu ul {
   display: flex;
   justify-content: center;
@@ -102,14 +109,16 @@
   bottom: 0;
   opacity: 0;
 }
-.company-intro .sub-menu ul li:nth-child(1) span:after {
+.company-intro .sub-menu ul li.active span:after {
   opacity: 1;
 }
-.company-intro .sub-menu ul li:nth-child(1) {
+.company-intro .sub-menu ul li.active {
   color: var(--main1);
 }
 /* //e: 서브 메뉴 */
+/* e: 공통 */
 
+/* s: sub: company-intro */
 /* s: section1 : company-introduction */
 .company-introduction {
   margin: 17rem 0;
@@ -149,8 +158,10 @@
 }
 .kumho-introduction li {
   z-index: 10;
-  width: 33.2rem;
-  height: 51rem;
+  /* width: 33.2rem; */
+  width: 17.2916%;
+  /* height: 51rem; */
+  aspect-ratio: 332/510;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,19 +183,22 @@
 .kumhoec {
   margin-bottom: 17rem;
 }
+.kumhoec-pic {
+  margin: 0 auto;
+}
+.kumhoec-pic figure {
+  width: 100%;
+  aspect-ratio: 710 / 887;
+}
 .kumhoec-con {
   margin-top: 7.5rem;
   display: flex;
   gap: 8.4rem;
   align-items: center;
 }
-.kumhoec-pic {
-  width: 71rem;
-  height: 88.7rem;
-}
+
 .kumhoec-text {
-  width: 61.8rem;
-  height: 71.6rem;
+  width: 100%;
 }
 .kumhoec-text h3 {
   font-weight: 600;
@@ -199,6 +213,7 @@
   line-height: 1.6;
   font-weight: 400;
 }
+
 /* e: section2 */
 
 /* s: section3 : vision */
@@ -207,8 +222,9 @@
 }
 .vision figure {
   margin: 7.5rem auto 0;
-  width: 92.2rem;
-  height: 47.3rem;
+  /* width: 92.2rem; */
+  /* width: 72.6562%; */
+  /* height: 47.3rem; */
 }
 /* e: section3 */
 
@@ -218,22 +234,29 @@
 }
 .company-info-con {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 7.5rem;
+  width: 100%;
+  gap: 9.7rem;
 }
 .company-info-pic {
-  width: 71rem;
-  height: 57.2rem;
-  /* object-fit: cover; */
+  width: 50%;
 }
 .company-info-pic figure {
   width: 100%;
   height: 100%;
 }
-.company-info-pic figure img {
+.company-info-pic img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
+}
+.company-info-text {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.company-info-text table {
+  width: 100%;
 }
 .company-info-text tbody {
   border-bottom: 2px solid #dddddd;
@@ -245,15 +268,252 @@
   font-weight: 700;
   font-size: 1.9rem;
   color: var(--black);
-  padding: 2.8rem 4rem 2.8rem 0;
+  padding: 2.8rem 0;
   text-align: left;
+  width: 30%;
 }
 .company-info-text tbody tr td {
   font-weight: 500;
   font-size: 1.9rem;
-  padding: 2.8rem 4rem;
+  padding: 2.8rem 0;
+  width: 70%;
 }
 /* e: section4 */
 /* e: 기본 1920 px */
+/* e: sub: company-intro */
 
-/* s: 태블릿 1024 px */
+/* s: sub: company-ceo */
+.ceo-title {
+  text-align: center;
+  margin-top: 17rem;
+}
+.ceo-title h2 {
+  font-weight: 700;
+  font-size: 5.8rem;
+  color: var(--black);
+}
+.ceo-title span {
+  color: var(--main1);
+}
+.ceo-title strong {
+  display: block;
+  font-weight: 500;
+  font-size: 3.3rem;
+  margin-top: 3rem;
+}
+
+.ceo-contents {
+  margin-top: 7.3rem;
+  padding-bottom: 17rem;
+  width: 82.1rem;
+}
+.ceo-contents h3 {
+  font-weight: 600;
+  font-size: 3.4rem;
+  color: var(--black);
+}
+.ceo-contents span {
+  color: var(--main1);
+}
+.ceo-p-text {
+  display: flex;
+  flex-direction: column;
+  margin: 8rem 0;
+  gap: 4.6rem;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 160%;
+}
+
+.ceo-sign {
+  display: flex;
+  gap: 6.4rem;
+}
+.ceo-sign h3 {
+  font-weight: 600;
+  font-size: 3.4rem;
+  color: var(--black);
+}
+.ceo-sign figure {
+  width: 23.9rem;
+  height: 11.2rem;
+}
+.ceo-sign img {
+  width: 100%;
+  height: 100%;
+}
+
+.ceo-contents-wrap {
+  position: relative;
+}
+.ceo-picture {
+  position: absolute;
+  margin: 0 0 0 2rem;
+  right: 0;
+  bottom: 0;
+  width: 58rem;
+  height: 116.2rem;
+}
+/* e: sub: company-ceo */
+
+/* ------------------------------ */
+
+/* 반응형 */
+/* s: 태블릿 디자인: 1024 ->1150 */
+/* ceo-intro */
+
+@media (max-width: 1150px) {
+  /* company-intro */
+  .kumho-introduction {
+    position: relative;
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    background: url(../img/kumho-introduction.png) no-repeat;
+    background-size: cover;
+  }
+
+  .kumho-introduction li {
+    width: 50%;
+    aspect-ratio: 1024/942;
+  }
+
+  .kumhoec-con {
+    display: flex;
+    flex-direction: column;
+  }
+  .vision figure {
+    width: 100%;
+  }
+  .vision img {
+    display: block;
+    margin: 0 auto;
+  }
+  .company-info-con {
+    display: flex;
+    flex-direction: column;
+  }
+  .company-info-pic {
+    width: 100%;
+  }
+  .company-info-text {
+    width: 100%;
+  }
+
+  /* company-ceo */
+  .ceo-contents {
+    padding-bottom: 28.7rem;
+  }
+  .ceo-sign {
+    display: flex;
+    flex-direction: column;
+    gap: 4.4rem;
+  }
+  .ceo-picture {
+    width: 41.5rem;
+    height: 62.9rem;
+  }
+  .ceo-picture figure {
+    width: 41.5rem;
+    height: 62.9rem;
+    overflow: hidden;
+  }
+}
+/* --------------------------------*/
+/* s: 모바일:830 */
+@media (max-width: 805px) {
+  /* company-intro */
+  .kumhoec-pic figure {
+    width: 89.7435%;
+    margin: 0 auto;
+  }
+  .kumhoec-text {
+    width: 89.7435%;
+  }
+  .kumhoec-text h3 {
+    font-size: 2.4rem;
+  }
+  .kumhoec-text p {
+    font-size: 1.6rem;
+  }
+  .vision figure {
+    aspect-ratio: 366 / 188;
+  }
+  .company-info-text table {
+    width: 100%;
+  }
+
+  /* company-ceo */
+  .ceo-picture {
+    width: 29.8rem;
+    height: 45.1rem;
+  }
+  .ceo-picture figure {
+    width: 29.8rem;
+    height: 45.1rem;
+    overflow: hidden;
+  }
+}
+
+/* --------------------------------*/
+/* s: 모바일:390->530 */
+@media (max-width: 530px) {
+  /* company-intro */
+  .title-text h2 {
+    font-size: 3.2rem;
+  }
+  .title-text p {
+    font-size: 2rem;
+  }
+  .kumho-introduction li dl dt {
+    font-size: 5rem;
+  }
+  .kumho-introduction li dl dd {
+    font-size: 1.4rem;
+  }
+
+  .company-info-pic figure {
+    width: 100%;
+  }
+
+  .company-info-text tbody tr th,
+  .company-info-text tbody tr td {
+    display: block;
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+
+  .company-info-text tbody tr th {
+    padding: 1.5rem 0 0 0;
+  }
+
+  /* company-ceo */
+  .ceo-contents {
+    width: 35rem;
+    padding-bottom: 45.1rem;
+  }
+  .ceo-title h2 {
+    font-size: 3.2rem;
+  }
+  .ceo-title strong {
+    font-size: 2rem;
+  }
+  .ceo-contents h3 {
+    font-size: 2.4rem;
+  }
+  .ceo-p-text {
+    font-size: 1.6rem;
+  }
+  .ceo-sign h3 {
+    font-size: 2.4rem;
+  }
+  .ceo-sign figure {
+    width: 20.1rem;
+    height: 9.4rem;
+  }
+}
+
+/* //e: 모바일 디자인 */
+
+/* -------------------------------- */
